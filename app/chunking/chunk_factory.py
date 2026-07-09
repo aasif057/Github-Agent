@@ -1,10 +1,13 @@
 from app.chunking.python_chunker import PythonChunker
 
+
 class ChunkFactory:
-    @staticmethod
-    def get_chunker(language):
 
-        if language == "python":
-            return PythonChunker()
+    _chunkers = {
+        "python": PythonChunker(),
+    }
 
-        return None
+    @classmethod
+    def get_chunker(cls, language):
+
+        return cls._chunkers.get(language)
