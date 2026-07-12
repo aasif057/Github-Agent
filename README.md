@@ -1,4 +1,4 @@
-# Repository RAG (Retrieval-Augmented Generation) Assistant
+# GitHub Code Intelligence Platform
 
 A Retrieval-Augmented Generation (RAG) pipeline designed to ingest, index, and query GitHub repositories. This project allows users to converse with a codebase, ask technical questions, track down bugs, and understand repository structure using natural language.
 
