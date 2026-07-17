@@ -34,8 +34,13 @@ class GeminiLLM(BaseLLM):
         chain = prompt | self.llm | self.parser
 
         start = perf_counter()
-
-        answer = chain.invoke({})
+        try:
+            answer = chain.invoke({})
+        except Exception as e:
+            raise RuntimeError(
+                f"Failed to invoke Gemini model '{self.config.model_name}'. "
+                "Check that the model name is available for your API project."
+            ) from e
 
         latency_ms = (perf_counter() - start) * 1000
 

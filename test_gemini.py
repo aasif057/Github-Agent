@@ -8,7 +8,6 @@ load_dotenv()
 
 config = LLMConfig(
     provider="gemini",
-    model_name="gemini-3.5-flash",
     api_key=os.environ["GEMINI_API_KEY"],
 )
 
