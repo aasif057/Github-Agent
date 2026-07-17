@@ -43,7 +43,7 @@ Guidelines:
                 ),
                 (
                     "human",
-                    f"""
+                    """
 Repository Context
 ==================
 
@@ -57,7 +57,10 @@ User Question
 """.strip(),
                 ),
             ]
-        )
+        ).partial(
+    context=context,
+    question=question,
+)
 
     @staticmethod
     def _build_context(
